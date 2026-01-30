@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfvaado3p27gi"]
+
+[ext_resource type="Script" uid="uid://c6ghu8rsaeq08" path="res://Scripts/debug_menu.gd" id="1_urvin"]
+
+[node name="PlayerDebugMenu" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 100)
+offset_right = 300.0
+offset_bottom = 60.0
+script = ExtResource("1_urvin")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DebugProperties" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2

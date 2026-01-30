@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://caoqbrlcajb6c"]
+
+[ext_resource type="Script" uid="uid://cgpr7g6ymdut1" path="res://scripts/game_manager.gd" id="1_2dftf"]
+[ext_resource type="PackedScene" uid="uid://cfvaado3p27gi" path="res://DebugMenu.tscn" id="2_2dftf"]
+[ext_resource type="PackedScene" uid="uid://bddnw8uhmhikb" path="res://levels/example_world.tscn" id="2_bcbcq"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_2dftf")
+
+[node name="World_3d" type="Node3D" parent="."]
+
+[node name="Example_World" parent="World_3d" instance=ExtResource("2_bcbcq")]
+
+[node name="World_2d" type="Node2D" parent="."]
+
+[node name="Gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PlayerDebugMenu" parent="Gui" instance=ExtResource("2_2dftf")]
+layout_mode = 0
+offset_bottom = 100.0
