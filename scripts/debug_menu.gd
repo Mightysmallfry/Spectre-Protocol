@@ -16,7 +16,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_menu"):
 		visible = !visible
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !visible: return
@@ -24,7 +23,6 @@ func _process(delta: float) -> void:
 	
 	# The fps = 1/delta calculation
 	framesPerSecond = "%.2f" % (1.0/delta)
-	
 
 func add_property(title : String, value, order):
 	var target

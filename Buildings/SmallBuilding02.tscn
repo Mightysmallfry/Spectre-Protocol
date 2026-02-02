@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cklq6w7enkvs6"]
+
+[ext_resource type="ArrayMesh" uid="uid://bcydgoeqkhuk1" path="res://assets/Buildings/Small Building 02/Package/SmallBuilding02.obj" id="1_6kmf7"]
+[ext_resource type="Script" uid="uid://xxihhcpdkt" path="res://Buildings/building.gd" id="1_yqxjg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_34jgm"]
+size = Vector3(3.550537, 5.856064, 3.441162)
+
+[node name="SmallBuilding02" type="Node3D" node_paths=PackedStringArray("Meshes", "Raycasts")]
+script = ExtResource("1_yqxjg")
+Meshes = [NodePath("Mesh")]
+Raycasts = [NodePath("Mesh/RayCast3D"), NodePath("Mesh/RayCast3D2"), NodePath("Mesh/RayCast3D3"), NodePath("Mesh/RayCast3D4")]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_6kmf7")
+
+[node name="Area3D" type="Area3D" parent="Mesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1515427, 0)
+shape = SubResource("BoxShape3D_34jgm")
+
+[node name="RayCast3D" type="RayCast3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0.25, 1.75)
+target_position = Vector3(0, -0.3, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0.25, -1.75)
+target_position = Vector3(0, -0.3, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.25, -1.75)
+target_position = Vector3(0, -0.3, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.25, 1.75)
+target_position = Vector3(0, -0.3, 0)

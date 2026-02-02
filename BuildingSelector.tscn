@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2j1ayes44owt"]
+
+[ext_resource type="Texture2D" uid="uid://ba1sw5d1y8fh7" path="res://assets/Buildings/Small Building 01/Package/SmallBuilding01Icon.png" id="1_tdlr2"]
+[ext_resource type="Script" uid="uid://br8aodbcrteey" path="res://scripts/Controllers/BuildController.gd" id="1_xb35d"]
+[ext_resource type="Texture2D" uid="uid://cj0plhpohtohs" path="res://assets/Buildings/Small Building 02/Package/SmallBuilding02Icon.png" id="2_xb35d"]
+[ext_resource type="Texture2D" uid="uid://cbuqbr1vebjxv" path="res://assets/Buildings/Small Building 03/Package/SmallBuilding03Icon.png" id="3_chvx6"]
+[ext_resource type="Texture2D" uid="uid://dbfc4116x7rsr" path="res://assets/Buildings/Small Building 04/Package/SmallBuilding04Icon.png" id="4_m2n73"]
+
+[node name="BuildingSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_xb35d")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -142.0
+offset_right = 262.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+theme_override_constants/icon_margin = 0
+item_count = 4
+max_columns = 4
+fixed_icon_size = Vector2i(128, 128)
+item_0/icon = ExtResource("1_tdlr2")
+item_1/icon = ExtResource("2_xb35d")
+item_2/icon = ExtResource("3_chvx6")
+item_3/icon = ExtResource("4_m2n73")
+
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]

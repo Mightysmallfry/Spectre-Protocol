@@ -13,8 +13,8 @@ var current_gui : Control
 func _ready() -> void:
 	Global.game_manager = self
 	#current_world_3d = $World_3d/Level_One
-	current_world_3d = $World_3d/example_world
-	current_gui = $Gui/MainMenu
+	current_world_3d = $World_3d/Example_World
+	# current_gui = $Gui/MainMenu
 
 func change_3d_scene(next_scene : String, delete : bool = true, keep_running : bool = false) -> void:
 	if (current_world_3d != null):
